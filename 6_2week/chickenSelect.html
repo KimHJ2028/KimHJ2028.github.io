@@ -1,0 +1,213 @@
+<!DOCTYPE html> <!-- chickenSelect.html -->
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>향수 종류</title>
+  <script language="javascript"> 
+	function showCK(selection) {
+    a = document.forms.selection;
+if(selection == 1) {
+     a.CK1.style.display = "";
+     a.CK2.style.display = "none";
+     a.CK3.style.display = "none";
+     a.CK4.style.display = "none";
+     a.CK5.style.display = "none";
+     a.CK6.style.display = "none";
+    } 
+else if(selection == 2) {
+     a.CK1.style.display = "none";
+     a.CK2.style.display = "";
+     a.CK3.style.display = "none";
+     a.CK4.style.display = "none";
+     a.CK5.style.display = "none";
+     a.CK6.style.display = "none";
+    } 
+else if(selection == 3) {
+     a.CK1.style.display = "none";
+     a.CK2.style.display = "none";
+     a.CK3.style.display = "";
+     a.CK4.style.display = "none";
+     a.CK5.style.display = "none";
+     a.CK6.style.display = "none";
+    } 
+else if(selection == 4) {
+     a.CK1.style.display = "none";
+     a.CK2.style.display = "none";
+     a.CK3.style.display = "none";
+     a.CK4.style.display = "";
+     a.CK5.style.display = "none";
+     a.CK6.style.display = "none";
+    } 
+ else if(selection == 5) {
+     a.CK1.style.display = "none";
+     a.CK2.style.display = "none";
+     a.CK3.style.display = "none";
+     a.CK4.style.display = "none";
+     a.CK5.style.display = "";
+     a.CK6.style.display = "none";
+    } 
+else if(selection == 6) {
+     a.CK1.style.display = "none";
+     a.CK2.style.display = "none";
+     a.CK3.style.display = "none";
+     a.CK4.style.display = "none";
+     a.CK5.style.display = "none";
+     a.CK6.style.display = "";
+    } 
+}
+	</script>
+  </head>
+  
+  <body>
+    <section>
+    <fieldset>
+      <legend>어떤 치킨을 먹을까?</legend>
+       <form name="selection">
+      <select name=" " onchange="showCK(this.options[this.selectedIndex].value);"> 
+        <option value="1">치킨 브랜드 종류</option> 
+        <option value="2">BBQ</option>  
+        <option value="3">BHC</option>
+        <option value="4">굽네치킨</option>
+        <option value="5">교촌치킨</option>
+        <option value="6">지코바 치킨</option>
+      </select><br/><br/>
+
+      <select name="CK1" style="display: ;">
+        <option value=" ">치킨 메뉴</option>
+      </select>
+      
+      <select name="CK2" style="display: none;"> <!-- BBQ 메뉴 -->
+        
+        <option value="">메뉴판</option> 
+        <option value=" ">허니버터갈릭스(21.000원)</option>
+        <option value=" ">황금올리브치킨(18.000원)</option>
+        <option value=" ">황금올리브닭다리(18.000원)</option>
+        <option value=" ">자메이카 통다리 구이(19.500원)</option>
+        <option value=" ">바삭칸 치킨(16.000원)</option>
+        <option value=" ">극한왕갈비치킨(21.000원)</option>
+        <option value=" ">시크릿 양념치킨(19.500원)</option>
+        <option value=" ">바삭칸 치킨(양념)(17.500원)</option>
+        <option value=" ">스모크 치킨(17.000원)</option>
+        <option value=" ">황금올리브속안삼(17.000원)</option>
+        <option value=" ">NEW 치킨강정(19.000원)</option>
+        <option value=" ">순살 크래커(18.000원)</option>
+        <option value=" ">빠리치킨(한마리)(19.000원)</option>
+        <option value=" ">소이 갈릭스(18.900원)</option>
+        <option value=" ">매달구(19.500원)</option>
+        <option value=" ">빠리치킨(윙)(19.000원)</option>
+        <option value=" ">마라 핫치킨(18.900원)</option>
+        <option value=" ">치즐링(19.000원)</option>
+        <option value=" ">써프라이드(19.900원)</option>
+        <option value=" ">순살바삭칸치킨(18.000원)</option>
+        <option value=" ">바삭칸치킨(반반)(18.000원)</option>
+        <option value=" ">황금올리브치킨+크림치즈(23.000원)</option>
+        <option value=" ">황금올리브닭다리+크림치즈볼(24.000원)</option>
+        <option value=" ">황금올리브닭다리(반반)(20.000원)</option>       
+      </select>
+      
+      <select name="CK3" style="display: none;"> <!-- BHC 메뉴 -->
+        <option value=" ">메뉴판</option>
+       <option value=" ">소떡강정(19.000원)</option>
+       <option value=" ">치하오(18.000원)</option>
+       <option value=" ">뿌링클(17.000원)</option>
+       <option value=" ">맛초킹(18.000원)</option>
+       <option value=" ">갈비레오(18.000원)</option>
+       <option value=" ">치하오순살(19.000원)</option>
+       <option value=" ">치레카(17.000원)</option>
+       <option value=" ">치레카 순살(18.000원)</option>
+       <option value=" ">커리퀸(17.000원)</option>
+       <option value=" ">커리퀸 순살(18.000원)</option>
+       <option value=" ">맵스터(17.000원)</option>
+       <option value=" ">맵스터 순살(18.000원)</option>
+       <option value=" ">붐바스틱(18.000원)</option>
+       <option value=" ">치레카(17.000원)</option>
+       <option value=" ">뿌링클 순살(19.000원)</option>
+       <option value=" ">뿌링클HOT (18.000원)</option>
+       <option value=" ">뿌링클HOT 순살(19.900원)</option>
+       <option value=" ">맛초킹 순살(19.000원)</option>
+       <option value=" ">바삭클(15.000원)</option>
+       <option value=" ">닭날개후라이드(17.000원)</option>
+       <option value=" ">해바라기 후라이드 치킨(15.000원)</option>
+       <option value=" ">해바라기 닭다리 후라이드 치킨(17.000원)</option>
+       <option value=" ">해바라기 핫후라이드 치킨(16.000원)</option> 
+      </select>
+      
+      <select name="CK4" style="display: none;"> <!-- 굽네치킨 메뉴 -->
+        <option value=" ">메뉴판</option>
+        <option value=" ">굽네 갈비천왕(17.000원)</option>
+        <option value=" ">굽네 갈비천왕 통다리(19.000원)</option>
+        <option value=" ">굽네 갈비천왕 윙(19.000원)</option>
+        <option value=" ">굽네 갈비천왕 순살(19.900원)</option>
+        <option value=" ">굽네 오리지널(15.000원)</option>
+        <option value=" ">굽네 오리지널 통다리(17.000원)</option>
+        <option value=" ">굽네 오리지널 윙(17.000원)</option>
+        <option value=" ">굽네 오리지널 순살(18.900원)</option>
+        <option value=" ">굽네 볼케이노(17.000원)</option>
+        <option value=" ">굽네 볼케이노 통다리(19.000원)</option>
+        <option value=" ">굽네 볼케이노 윙(19.000원)</option>
+        <option value=" ">굽네 볼케이노 순살(19.900원)</option>
+        <option value=" ">굽네 고추 바사삭(16.000원)</option>
+        <option value=" ">굽네 고추 바사삭 윙(18.000원)</option>
+        <option value=" ">굽네 고추 바사삭 순살(19.900원)</option>
+        <option value=" ">굽네 허니멜로(18.000원)</option>
+        <option value=" ">굽네 허니멜로 통다리(19.900원)</option>
+        <option value=" ">굽네 허니멜로 윙(19.900원)</option>
+        <option value=" ">굽네 허니멜로 순살(21.900원)</option>
+        <option value=" ">굽네 핫 갈비천왕(17.000원)</option>
+        <option value=" ">굽네 핫 갈비천왕 통다리(19.000원)</option>
+        <option value=" ">굽네 핫 갈비천왕 윙(19.000원)</option>
+        <option value=" ">굽네 핫 갈비천왕 순살(19.900원)</option>
+        <option value=" ">굽네 스윗 볼케이노(17.000원)</option>
+        <option value=" ">굽네 스윗 볼케이노 통다리(19.000원)</option>
+        <option value=" ">굽네 스윗 볼케이노 윙(19.000원)</option>
+        <option value=" ">굽네 스윗 볼케이노 순살(19.900원)</option>
+        <option value=" ">굽네 양념치킨(17.000원)</option>
+        <option value=" ">굽네 볼케이노 윙(19.000원)</option>
+        <option value=" ">굽네 볼케이노 순살(19.900원)</option>
+        <option value=" ">굽네 딥치즈(17.000원)</option>
+        <option value=" ">굽네 딥치즈 윙(19.000원)</option>
+        <option value=" ">굽네 딥치즈 순살(19.900원)</option>
+      </select>
+      
+      <select name="CK5" style="display: none;"> <!-- 교촌치킨 메뉴 -->
+       <option value=" ">메뉴판</option>
+       <option value=" ">교촌 후라이드(15.000원)</option>
+       <option value=" ">교촌살살치킨(16.000원)</option>
+       <option value=" ">교촌소이살살(16.000원)</option>
+       <option value=" ">교촌반반오리지날(16.000원)</option>
+       <option value=" ">교촌반반콤보(18.000원)</option>
+       <option value=" ">교촌반반윙(18.000원)</option>
+       <option value=" ">교촌반반스틱(18.000원)</option>
+       <option value=" ">교촌레드오리지날(16.000원)</option>
+       <option value=" ">교촌레드콤보(18.000원)</option>
+       <option value=" ">교촌레드윙(18.000원)</option>
+       <option value=" ">교촌레드스틱(18.000원)</option>
+       <option value=" ">교촌레드순살(20.000원)</option>
+       <option value=" ">교촌허니오리지날(15.000원)</option>
+       <option value=" ">교촌허니콤보(18.000원)</option>
+       <option value=" ">교촌허니윙(18.000원)</option>
+       <option value=" ">교촌허니스틱(18.000원)</option>
+       <option value=" ">교촌허니순살(20.000원)</option>
+       <option value=" ">교촌콤보(17.000원)</option>
+       <option value=" ">교촌윙(18.000원)</option>
+       <option value=" ">교촌라이스세트(19.000원)</option>
+      </select>
+      
+      <select name="CK6" style="display: none;"> <!-- 지코바 메뉴 -->
+       <option value=" ">메뉴판</option>
+       <option value=" ">지코바 양념치킨(18.000원)</option>
+       <option value=" ">지코바 반반치킨(18.000원)</option>
+       <option value=" ">지코바 소금구이(날개+봉)(18.000원)</option>
+       <option value=" ">지코바 소금구이(17.000원)</option>
+       <option value=" ">지코바 소금스틱(다리)(18.000원)</option>
+       <option value=" ">지코바 양념스틱(다리)(19.000원)</option>
+       <option value=" ">지코바 양념치킨(순살)(20.000원)</option>
+       <option value=" ">지코바 소금구이(순살)(19.000원)</option>
+       <option value=" ">지코바 반반치킨(순살)(20.000원)</option>
+      </select>
+
+<input type="reset" value="취소">
+</form></fieldset></section>
+  </body>
+</html>
