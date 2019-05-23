@@ -1,39 +1,44 @@
 <!doctype html> <!-- operatorTest.html -->
 <html>
-  <head>
-    <meta http-equiv="content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <script src="https://~~~~~~~~~/jquery-1.11.1.min.js"></script>
-    <link rel="stylesheet" href="https://KimHJ2028.github.io/12week/sample.css">
-    <script src="https://KimHJ2028.github.io/12week/sample.js"></script>
+<head>
+  <meta http-equiv="content-Type" content="text/html; charset=utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <style>
+  body{font-family: Verdana, snas-serif; font-size:0.8em;}
+  header, nav, section, article, footer
+  {border:1px solid gray; margin:5px; padding:8px;}
+  section#displayArea{height:210px;}
+  nav ul{margin:0; padding:0;}
+  nav ul li {display:inline; margin:5px;}
+  a{text-decoration:none;}
+  #id_form{width:100px; height:14px; color:red;}
+  </style>
   
-    <title>웹프로그래밍 실습</title></head>
-  
-  <body>
-    <header><h2>실습 대환영</h2></header>
-    <nav>
+  <script>
+  window.onload = function()
+  {
+  document.getElementById("button1").addEventListener('click',function()
+  {document.getElementsByTagName("h4")[0].innerHTML="javascript 방법 4 수동실행!";})
+  }
+	</script>
+  <tilte>자바 스크립트 실습</tilte></head>
+
+<body>
+  <header>
+    <h2>자바 스크립트를 환영합니다</h2></header>
+  <nav>
     <ul>
     <li><a href="http://hive.dju.ac.kr">실습서버</a></li>
     </ul></nav>
-  
   <section>
-    <h4>변수 예제 실습</h4>
-    <script>
-    var a=10,b=20; firstName="길동",lastName="홍";
-    document.write("a=",(a), ", b=",(b)",lastName=",(lastName),",firstName=",(firstName),"<br/>");
-    document.write("숫자연산:", "a+b=",(a+b), "a-b=",(a-b),"a*b=",(a*b),"a/b=","a%b=",(a%b),"<br/>");
-    document.write("문자연산:","이름=",(lastName+firstName),"<br/>");
-    document.write("복합연산:","b+=5 ---->",(b+=5),",복합연산:","b*=5 ---->",(b*=5),"<br/>");
-    var a=10,b=20; c=0; d=0;
-    document.write("증감연산:", "a=",(a), "b=",(b),"c=",(c),"d=",(d),"<br/>");
-    document.write("문자연산:","이름=",(lastName+firstName),"<br/>");
-    document.write("복합연산:","b+=5 ---->",(b+=5),",복합연산:","b*=5 ---->",(b*=5),"<br/>");
-    </script>
-    </section>
-    <footer>
+    <h4>자바 스크립트 실행합니다</h4>
+    <button id="button1">함수실행1</button>
+    <input type="button" id="button2" value="함수실행2"/>
+  </section>
+  <footer>
     <p>
     &copy; 20XX Made by Korea. All rights reserved.
     </p>
   </footer>
-  </body>
+</body>
 </html>
