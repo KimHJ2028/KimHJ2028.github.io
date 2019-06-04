@@ -1,0 +1,18 @@
+@charset "utf-8";
+    body{background-color: black; color:white;}  
+    nav, section, article, aside, footer
+    {border:1px solid gray; margin:5px; padding:8px; width:auto; color:white;}
+    header { margin:5px; padding:8px; width:auto; }
+    .fontHelvetica{ font-family: Helvetica;}
+    .textcenter{ text-align: center;}
+    .menubar{border:none;  border:0px; margin:0px; padding:0px; font: 67.5% "Lucida Sans Unicode", "Bitstream Vera Sans", "Trebuchet Unicode MS", "Lucida Grande", Verdana, Helvetica, sans-serif; font-size:14px; font-weight:bold;height:"auto"}
+    .menubar ul{ background: Yellow;  height:50px; list-style:none; margin:0; padding:0;}
+    .menubar li{float:left; padding:0px; }
+    .menubar li a{ background: Yellow; color:Black; display:block; font-weight:normal; line-height:50px; margin:0px; padding:0px 25px; text-align:center; text-decoration:none;}
+    .menubar li a:hover, .menubar ul li:hover a{ background: rgb(100,100,100); color:white; text-decoration:none;}
+    .menubar li ul{ background: Yellow; display:none; height:auto; padding:0px; margin:0px; border:0px; position:absolute; width:200px; z-index:200;}
+    .menubar li:hover ul{ display:block; }
+    .menubar li li { background: Yellow; display:block; float:none; margin:0px; padding:0px; width:200px; }
+    .menubar li:hover li a{ background:none; }
+    .menubar li ul a{ display:block; height:50px; font-size:12px; font-style:normal; margin:0px; padding:0px 10px 0px 15px; text-align:left;}
+    .menubar p{ clear:left; }
