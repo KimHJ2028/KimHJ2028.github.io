@@ -1,0 +1,68 @@
+test
+package io.github.kimhj2028;
+
+public class Ex6_1 {
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191010 "+"함수 예시");
+		
+		int d = sum(1,2,3);
+		System.out.println("d = "+d);
+	}
+	static int sum(int a, int b, int c)
+	{
+		int total = a+b+c;
+		return total;
+	}
+}
+
+package io.github.kimhj2028;
+
+public class Ex6_2 {
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191010 "+"함수 예시");
+		
+			
+		float num=10.0f;
+		System.out.println("num ="+num);
+		
+		rand(num);
+		num=20.0f;
+		System.out.println("num ="+num);
+		
+		rand(num);
+		System.out.println("num ="+num);
+	}
+		
+		static void rand(float newnum)
+		{
+			newnum = newnum +5.0f;
+			System.out.println("new num ="+newnum);
+		}
+}
+
+package io.github.kimhj2028;
+
+public class Ex6_3 {
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191010 "+"함수 예시");
+		
+		String gender="female";
+		fnGender(gender);
+		gender="male";
+		fnGender(gender);
+	}
+	static void fnGender(String gender)
+	{
+		if(gender =="female")
+		{
+			System.out.println("여자");
+		}
+		else if(gender =="male")
+		{
+			System.out.println("남자");
+		}
+	}
+}
