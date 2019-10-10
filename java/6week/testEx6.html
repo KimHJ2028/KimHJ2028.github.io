@@ -402,3 +402,34 @@ public class home2_2 {
 	}
 }
 
+package io.github.kimhj2028;
+
+public class home2_3 {
+	public static void main(String[] args)
+	{
+		System.out.println("김희재"+"-"+"20191010 "+"소수찾기 과제-"+ "최대값:30");
+		
+		
+		  boolean flag = true; 
+		  int i, number; 
+		  for (number = 1; number < 31; number++)
+		  { 
+		    for (i = 2; i < number; i++)
+		    { 
+		      if (number % i == 0) { 
+		        flag = false; 
+		        continue; 
+		     } 
+		  } 
+		  if (flag)
+		  { 
+		    System.out.println(number + " 소수 입니다."); 
+		  } else
+		  { 
+		    System.out.println(number + " 소수가 아닙니다."); 
+		  } 
+		 flag = true; 
+		  }
+	}
+}
+
