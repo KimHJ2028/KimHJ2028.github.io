@@ -1,1 +1,358 @@
--
+package io.github.kimhj2028;
+
+public class Ex7_1 {
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191016"+"-"+"객체 예시");
+		NavySoldier kdhong;
+		kdhong  = new NavySoldier("홍길동","1등병");
+		
+		System.out.println(kdhong.name);
+		System.out.println(kdhong.rank);
+		kdhong.setHeight(("170"));
+		System.out.println(kdhong.getHeight());
+		
+		kdhong.swimming();
+		kdhong.firing();
+	}
+}
+class NavySoldier
+{
+	String name, rank, height, weight, service;
+	
+	NavySoldier(String name, String rank)
+	{
+		this.name = name;
+		this.rank = rank;
+	}
+	
+	void swimming(){
+		System.out.println(this.name+" 잠수하기");
+	}
+	void firing(){
+		System.out.println(this.name+" 대포발사");
+	}
+	void setHeight(String height){
+		this.height = height;
+	}
+	String getHeight(){
+		return this.height;
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex7_2 {
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191016"+"-"+"객체 예시");
+		
+		String name, rank, height, weight, service;
+		name = "홍길동";
+		rank = "1등병";
+		System.out.println(name);
+		System.out.println(rank);
+		height = "170";
+		System.out.println(height);
+		swimming(name);
+		firing(name);
+	}
+	static void swimming(String name)
+	{
+		System.out.println(name+"잠수하기");
+	}
+	static void firing(String name)
+	{
+		System.out.println(name+"대포발사");
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex7_11 {
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191016"+"-"+"객체 예시");
+		
+		Studentx stud1 = new Studentx();
+		stud1.setStuNO("20151629");
+		stud1.setName("김희재");
+		System.out.println(stud1.getStudNo());
+		System.out.println(stud1.getName());
+	}
+}
+class Studentx {
+	String StudNo, name;
+	public void setStuNO(String StudNo)
+	{
+		this.StudNo = StudNo;
+	}
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	public String getStudNo()
+	{
+		return this.StudNo;
+	}
+	public String getName()
+	{
+		return this.name;
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex7_12 {
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191016"+"-"+"객체 예시");
+		
+		Animal anim = new Animal();
+		anim.setName("야옹이");
+		System.out.println(anim.getName()+"는 "+anim.identify());
+	}
+}
+
+class Animal {
+	String name;
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	public String getName()
+	{
+		return this.name;
+	}
+	public String identify()
+	{
+		return "동물";
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex7_3 {
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191016"+"-"+"객체 예시");
+		
+		Dist3 dist1 = new Dist3();
+		dist1.x1=10; dist1.y1=30;
+		dist1.x2=20; dist1.y2=60;
+		double c = dist1.dLength();
+		System.out.println("두 점사이 거리는"+c);
+	}
+}
+
+class Dist3
+{
+	int x1, y1, x2, y2;
+	Dist3()
+	{
+		
+	}
+	public double dLength()
+	{
+		return Math.sqrt((this.x2-this.x1)*(this.x2-this.x1)+(this.y2-this.y1)*(this.y2-this.y1));
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex7_4 {
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191016"+"-"+"객체 예시");
+	
+		Dist4 dist1 = new Dist4();
+		dist1.setX1(10); dist1.setY1(30);
+		dist1.setX2(20); dist1.setY2(60);
+		double c = dist1.dLength();
+		System.out.println("두 점 사이의 거리는"+c);
+	}
+}
+class Dist4
+{
+	private int x1, y1, x2, y2;
+	public void setX1(int x1)
+	{
+		this.x1=x1;
+	}
+	public void setY1(int y1)
+	{
+		this.y1=y1;
+	}
+	public void setX2(int x2)
+	{
+		this.x2=x2;
+	}
+	public void setY2(int y2)
+	{
+		this.y2=y2;
+	}
+	public double dLength()
+	{
+		return Math.sqrt((this.x2-this.x1)*(this.x2-this.x1)+(this.y2-this.y1)*(this.y2-this.y1));
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex7_5 {
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191016"+"-"+"객체 예시");
+		
+		Vadd5 add1 = new Vadd5();
+		add1.x=10.0;
+		add1.y=20.0;
+		
+		double add_value = add1.fn_add();
+		System.out.println("더하기="+add_value);
+	}
+}
+class Vadd5
+{
+	double x,y;
+	
+	Vadd5(){	}
+	public double fn_add()
+	{
+		double result;
+		result = this.x+this.y;
+		return result;
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex7_6 {
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191016"+"-"+"객체 예시");
+		
+		Vadd6 add1 = new Vadd6();
+		add1.setX(10.0);
+		add1.setY(20.0);
+		
+		double add_value = add1.fn_add();
+		System.out.println("더하기="+add_value);
+	}
+}
+class Vadd6
+{
+	private double x,y;
+	
+	void setX(double x)
+	{
+		this.x=x;
+	}
+	double getX()
+	{
+		return this.x;
+	}
+	void setY(double y)
+	{
+		this.y=y;
+	}
+	double getY()
+	{
+		return this.y;
+	}
+	public double fn_add()
+	{
+		return this.x+this.y;
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex7_9 {
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191016"+"-"+"객체 예시");
+	
+		Student stud1 = new Student("20151629","김희재",3);
+		
+		stud1.exam[0].setExamScore("자바",88);
+		stud1.exam[1].setExamScore("C",91);
+		stud1.exam[2].setExamScore("C++",92);
+		stud1.printGPA();
+	}
+}
+class Student {
+	String studNo, name;
+	int totSubject;
+	Exam[] exam;
+	public Student(String studNo, String name, int totSubject)
+	{
+		this.studNo = studNo;
+		this.name = name;
+		this.totSubject = totSubject;
+		exam = new Exam[totSubject];
+		
+		for(int i=0; i<exam.length; i++)
+		{
+			exam[i] = new Exam();
+		}
+	}
+	public void setStudNo(String studNo)
+	{
+		this.studNo = studNo;
+	}
+	public void setName(String name)
+	{
+		this.name= name;
+	}
+	public String getName()
+	{
+		return this.name;
+	}
+	public int getGPA()
+	{
+		int sum=0;
+		
+		for(int i=0; i<exam.length; i++)
+			sum= sum + this.exam[i].getScore();
+		return sum;
+	}
+	public void printGPA()
+	{
+		for(int i=0; i<exam.length; i++)
+		{
+			System.out.println("과목명:"+this.exam[i].getSubject()+",점수="+this.exam[i].getScore());
+		}
+		System.out.println("과목합계="+this.getGPA());
+	}
+}
+class Exam {
+	String subject;
+	int score;
+	
+	public void setExamScore(String subject, int score)
+	{
+		this.subject = subject;
+		this.score = score;
+	}
+	
+	public void setSubject(String subject)
+	{
+		this.subject = subject;
+	}
+	
+	public String getSubject()
+	{
+		return this.subject;
+	}
+	
+	public void setScore(int score)
+	{
+		this.score = score;
+	}
+	
+	public int getScore()
+	{
+		return this.score;
+	}
+}
