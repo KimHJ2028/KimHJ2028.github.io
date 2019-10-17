@@ -356,3 +356,107 @@ class Exam {
 		return this.score;
 	}
 }
+
+					    package io.github.kimhj2028;
+
+public class home3_1 {
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191017"+"-"+"객체 과제 - 자바빈 프로그램으로 작성");
+		
+		trArea tr1 = new trArea();
+		sqArea sq1 = new sqArea();
+		mul mul1 = new mul();
+
+		tr1.setTrX(10.0); tr1.setTrY(20.0);
+		sq1.setSqX(10.0); sq1.setSqY(20.0);
+		mul1.setMulX(10.0); mul1.setMulY(20.0);
+		
+		double trArea = tr1.fn_trArea();
+		double sqArea = sq1.fn_SqArea();
+		double mul = mul1.fn_mul();
+		
+		System.out.println("x와y의 값의 곱 = " + mul);
+		System.out.println("삼각형 면적 = " + trArea);
+		System.out.println("사각형 면젹 = " + sqArea);		
+	}
+}
+	class trArea
+	{
+		private double x,y;
+		
+		public void setTrX(double x)
+		{
+			this.x = x;
+		}
+		public void setTrY(double y)
+		{
+			this.y = y;
+		}
+		public double getTrX()
+		{
+			return this.x;
+		}
+		public double getTrY()
+		{
+			return this.y;
+		}
+		
+		public double fn_trArea()
+		{
+			return this.x * this.y *0.5;
+		}
+		
+	}
+	class sqArea
+	{
+	private double x,y;
+		
+		public void setSqX(double x)
+		{
+			this.x = x;
+		}
+		public void setSqY(double y)
+		{
+			this.y = y;
+		}
+		public double getSqX()
+		{
+			return this.x;
+		}
+		public double getSqY()
+		{
+			return this.y;
+		}
+		
+		public double fn_SqArea()
+		{
+			return this.x * this.y;
+		}
+	}
+	class mul
+	{
+	private double x,y;
+		
+		public void setMulX(double x)
+		{
+			this.x = x;
+		}
+		public void setMulY(double y)
+		{
+			this.y = y;
+		}
+		public double getMulX()
+		{
+			return this.x;
+		}
+		public double getMulY()
+		{
+			return this.y;
+		}
+		
+		public double fn_mul()
+		{
+			return this.x * this.y;
+		}
+	}
