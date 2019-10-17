@@ -356,8 +356,8 @@ class Exam {
 		return this.score;
 	}
 }
-
-					    package io.github.kimhj2028;
+////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
 
 public class home3_1 {
 	public static void main(String[]args)
@@ -458,5 +458,64 @@ public class home3_1 {
 		public double fn_mul()
 		{
 			return this.x * this.y;
+		}
+	}
+//////////////////////////////////////////////////////////////////////////////////////////////
+					    package io.github.kimhj2028;
+
+public class home3_1 {
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191017"+"-"+"객체 과제 - 객체 프로그램으로 작성");
+		
+		trArea tr1 = new trArea();
+		sqArea sq1 = new sqArea();
+		mul mul1 = new mul();
+
+		tr1.x=10; tr1.y=20;
+		sq1.x=10; sq1.y=20;
+		mul1.x=10; mul1.y=20;
+		
+		double trArea = tr1.fn_trArea();
+		double sqArea = sq1.fn_sqArea();
+		double mul = mul1.fn_mul();
+		
+		System.out.println("x와y의 값의 곱 = " + mul);
+		System.out.println("삼각형 면적 = " + trArea);
+		System.out.println("사각형 면젹 = " + sqArea);		
+	}
+}
+	class trArea
+	{
+		double x,y;
+		trArea(){}
+		public double fn_trArea()
+		{
+			double result;
+			result = this.x * this.y * 0.5;
+			return result;
+		}
+		
+	}
+	class sqArea
+	{
+		double x,y;
+		sqArea(){}
+		public double fn_sqArea()
+		{
+			double result;
+			result = this.x * this.y;
+			return result;
+		}
+	}
+	class mul
+	{
+		double x,y;
+		mul(){}
+		public double fn_mul()
+		{
+			double result;
+			result = this.x * this.y;
+			return result;
 		}
 	}
