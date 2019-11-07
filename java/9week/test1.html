@@ -1,1 +1,427 @@
 -
+package io.github.kimhj2028;
+
+public class Ex8_9 {
+	public static void main(String []args)
+	{
+		System.out.println("20191107-"+"김희재-"+ "Java 상속 예시");
+		
+		Cat1 aCat = new Cat1();
+		aCat.setName("야옹이");
+		System.out.println(aCat.getName()+"는"+aCat.identify());
+	}
+}
+
+class Animal1
+{
+	String name;
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	public String getName()
+	{
+		return this.name;
+	}
+	public String identify()
+	{
+		return "동물";
+	}
+}
+
+class Cat1 extends Animal1
+{
+
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+package io.github.kimhj2028;
+
+public class Ex8_10 {
+	public static void main(String []args)
+	{
+		System.out.println("20191107-"+"김희재-"+ "Java 상속 예시");
+		
+		Cat2 aCat = new Cat2();
+		aCat.setName("야옹이");
+		System.out.println(aCat.getName()+"의 장점= "+aCat.crawling());
+	}
+}
+
+class Animal2
+{
+	String name;
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	public String getName()
+	{
+		return this.name;
+	}
+	public String identify()
+	{
+		return "동물";
+	}
+}
+
+class Cat2 extends Animal2
+{
+	public String crawling()
+	{
+		return "나무오르기";
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex8_11 {
+	public static void main(String []args)
+	{
+		System.out.println("20191107-"+"김희재-"+ "Java 상속 예시");
+		
+		Cat3 aCat = new Cat3();
+		aCat.setName("야옹이");
+		System.out.println(aCat.getName()+"의 장점 = "+aCat.crawling());
+		System.out.println(aCat.getName()+"는 "+aCat.identify());
+	}
+}
+
+class Animal3
+{
+	String name;
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	public String getName()
+	{
+		return this.name;
+	}
+	public String identify()
+	{
+		return "동물";
+	}
+}
+
+class Cat3 extends Animal3
+{
+	public String crawling()
+	{
+		return "나무오르기";
+	}
+	@Override
+	public String identify()
+	{
+		return "고양이";
+	}
+
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex8_12 {
+	public static void main(String []args)
+	{
+		System.out.println("20191107-"+"김희재-"+ "Java 상속 예시");
+		
+		Cat4 aCat = new Cat4();
+		aCat.setName("야옹이");
+		System.out.println(aCat.getName()+"의 장점 = "+aCat.crawling());
+		System.out.println(aCat.getName()+"는 "+aCat.identify());
+		System.out.println(aCat.getName()+"의 장점 = "+aCat.identifyOrigin());
+	}
+}
+
+class Animal4
+{
+	String name;
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	public String getName()
+	{
+		return this.name;
+	}
+	public String identify()
+	{
+		return "동물";
+	}
+}
+
+class Cat4 extends Animal4
+{
+	public String crawling()
+	{
+		return "나무오르기";
+	}
+	@Override
+	public String identify()
+	{
+		return "고양이";
+	}
+	public String identifyOrigin()
+	{
+		String str = super.identify();
+		return str;
+	}
+
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex8_13 {
+	public static void main(String []args)
+	{
+		System.out.println("20191107-"+"김희재-"+ "Java 상속 예시");
+		
+		Pine pine= new Pine("3.5","소나무");
+		System.out.println("높이(m):"+pine.getHeight());
+		System.out.println("품종:"+pine.getSpecies());
+	}
+}
+
+class Tree{
+	String height;
+	
+	public Tree(String height)
+	{
+		this.height = height;
+	}
+	public void setHeight(String height)
+	{
+		this.height = height;
+	}
+	public String getHeight()
+	{
+		return this.height;
+	}
+}
+
+class Pine extends Tree{
+	String species;
+	
+	public Pine(String height, String species)
+	{
+		super(height);
+		this.species = species;
+	}
+	public void setSpeices(String species)
+	{
+		this.species = species;
+	}
+	public String getSpecies()
+	{
+		return this.species;
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex8_14 {
+	public static void main(String []args)
+	{
+		System.out.println("20191107-"+"김희재-"+ "Java 상속 예시");
+		
+		BeverageX coke = new BeverageX("콜라",2000,15);
+		
+		coke.printTitle(); coke.printData();
+		//Beverage tea = new Beverage();
+		//tea.setProduct("녹차"); tea.setPrince(3000); tea.setQuantity(20);
+		
+		BeverageX tea = new BeverageX("녹차",3000,20);
+		tea.printData();
+		
+		Liquor vodka = new Liquor("보드카",20000,2,35.0f);
+		vodka.printTitle(); vodka.printData();
+		
+		int sum = coke.getTotal()+tea.getTotal()+vodka.getTotal();
+		System.out.print("전체 합계= "+sum);
+	}
+}
+
+class BeverageX{
+	String product; int price , quantity;
+	
+	public BeverageX(String product, int price, int quantity)
+	{
+		this.product = product;
+		this.price = price;
+		this.quantity = quantity;
+	}
+	public String getProduct()
+	{
+		return this.product;
+	}
+	public int getPrice()
+	{
+		return this.price;
+	}
+	public int getQantity()
+	{
+		return this.quantity;
+	}
+	public int getTotal()
+	{
+		return this.price * this.quantity;
+	}
+	void printTitle()
+	{
+		System.out.println("제품명\t단가\t수량\t금액");
+	}
+	void printData()
+	{
+		System.out.println(this.product+"\t"+this.price+"\t"+this.quantity+"\t"+this.getTotal());
+	}
+}
+
+class Liquor extends BeverageX{
+	float alcohol;
+	
+	public Liquor(String product, int price, int quantity, float alcohol)
+	{
+		super(product, price, quantity);
+		this.alcohol =alcohol;
+	}
+	void printTitle()
+	{
+		System.out.println("제품명(알콜)\t단가\t수량\t금액");
+	}
+	void printData()
+	{
+		System.out.println(this.product+"("+this.alcohol+")"+"\t"+this.price+"\t"+this.quantity+"\t"+this.getTotal());
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex8_15 {
+	public static void main(String []args)
+	{
+		System.out.println("20191107-"+"김희재-"+ "Java 상속 예시");
+		
+		WebCount1 c1 = new WebCount1();
+		WebCount1 c2 = new WebCount1();
+	}
+}
+
+class WebCount1{
+	int count = 0;
+	
+	WebCount1()
+	{
+		this.count++;
+		System.out.println(this.count);
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex8_16 {
+	public static void main(String []args)
+	{
+		System.out.println("20191107-"+"김희재-"+ "Java 상속 예시");
+		
+		WebCount2 c1 = new WebCount2();
+		WebCount2 c2 = new WebCount2();
+	}
+}
+
+class WebCount2{
+	static int count = 0;
+	
+	WebCount2()
+	{
+		this.count++;
+		System.out.println(this.count);
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex8_17 {
+	public static void main(String []args)
+	{
+		System.out.println("20191107-"+"김희재-"+ "Java 상속 예시");
+		
+		WebCount3 c1 = new WebCount3();
+		WebCount3 c2 = new WebCount3();
+		
+		System.out.println(WebCount3.getCount());
+	}
+}
+
+class WebCount3{
+	static int count = 0;
+	WebCount3()
+	{
+		WebCount3.count++;
+		System.out.println(WebCount3.count);
+	}
+	public static int getCount()
+	{
+		return WebCount3.count;
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex8_19 {
+	public static void main(String []args)
+	{
+		System.out.println("20191107-"+"김희재-"+ "Java 상속 예시");
+		
+		Wallet w = new Wallet();
+		w.save(100);
+		Wallet.spend(10);
+		w.save(50);
+		Wallet.spend(200);
+		
+		System.out.println(Wallet.getAmount());
+		
+	}
+}
+
+class Wallet{
+	static int amount = 0;
+	
+	public void save(int amount)
+	{
+		Wallet.amount += amount;
+	}
+	public static void spend(int amount)
+	{
+		Wallet.amount -= amount;
+	}
+	public static int getAmount()
+	{
+		return Wallet.amount;
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex8_22 {
+	public static void main(String []args)
+	{
+		System.out.println("20191107-"+"김희재-"+ "Java 상속 예시");
+
+		smartPhone phone1 = new smartPhone();
+		phone1.display();
+		
+	}
+}
+
+abstract class Device{
+	String name;
+	
+	abstract void display();
+}
+
+class smartPhone extends Device{
+	void display()
+	{
+		System.out.println("스마트폰 디스플레이");
+	}
+}
