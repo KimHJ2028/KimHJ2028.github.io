@@ -1,0 +1,392 @@
+package io.github.kimhj2028;
+
+public class Home3_2
+{
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191107"+"객체 과제"+"절차 프로그램으로 삼각형 면적 구하기");
+		
+		double x,y;
+		double trArea;
+		
+		x=10.0;
+		y=20.0;
+		trArea = 0.5*x*y;
+		
+		System.out.println("x의 값 = "+ x);
+		System.out.println("y의 값 = "+ y);
+		System.out.println("삼각형 면적 = "+ trArea);
+		
+	}
+}
+//////////////// 1/12
+
+package io.github.kimhj2028;
+
+public class home3_3
+{
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191107"+"객체 과제"+"절차 프로그램으로 사각형 면적 구하기");
+		
+		double x,y;
+		double sqArea;
+		
+		x=10.0;
+		y=20.0;
+		sqArea = x*y;
+		
+		System.out.println("x의 값 = "+ x);
+		System.out.println("y의 값 = "+ y);
+		System.out.println("사각형 면적 = "+ sqArea);
+		
+	}
+}
+/// 2/12
+
+package io.github.kimhj2028;
+
+public class home3_4
+{
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191107"+"객체 과제"+"절차 프로그램으로 삼각형 면적 구하기");
+		
+		double x,y;
+		double mul;
+		
+		x=10.0;
+		y=20.0;
+		mul = x*y;
+		
+		System.out.println("x의 값 = "+ x);
+		System.out.println("y의 값 = "+ y);
+		System.out.println("x와 y의 곲 ="+ mul);
+		
+	}
+}
+/// 3/12
+
+package io.github.kimhj2028;
+
+public class Home3_2
+{
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191107"+"객체 과제"+"-함수 프로그램으로 삼각형 면적 구하기");
+		
+		double x,y;
+		double trArea;
+		
+		x=10.0;
+		y=20.0;
+		trArea = fn_trArea(x,y);
+		
+		System.out.println("x의 값 = "+ x);
+		System.out.println("y의 값 = "+ y);
+		System.out.println("삼각형 면적 = "+ trArea);
+		
+	}
+	public static double fn_trArea(double x, double y)
+	{
+		double result;
+		result = 0.5*x*y;
+		return result;
+	}
+}
+///////// 4/12
+
+package io.github.kimhj2028;
+
+public class home3_3
+{
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191107"+"객체 과제"+"-함수 프로그램으로 사각형 면적 구하기");
+		
+		double x,y;
+		double sqArea;
+		
+		x=10.0;
+		y=20.0;
+		sqArea = fn_sqArea(x,y);
+		
+		System.out.println("x의 값 = "+ x);
+		System.out.println("y의 값 = "+ y);
+		System.out.println("사각형 면적 = "+ sqArea);
+		
+	}
+	public static double fn_sqArea(double x, double y)
+	{
+		double result;
+		result = x*y;
+		return result;
+	}
+}
+////// 5/12
+
+package io.github.kimhj2028;
+
+public class home3_4
+{
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191107"+"객체 과제"+"-함수 프로그램으로 x,y곱 구하기");
+		
+		double x,y;
+		double mul;
+		
+		x=10.0;
+		y=20.0;
+		mul = fn_Mul(x,y);
+		
+		System.out.println("x의 값 = "+ x);
+		System.out.println("y의 값 = "+ y);
+		System.out.println("사각형 면적 = "+ mul);
+		
+	}
+	public static double fn_Mul(double x, double y)
+	{
+		double result;
+		result = x*y;
+		return result;
+	}
+}
+///////// 6/12
+
+package io.github.kimhj2028;
+
+public class Home3_2
+{
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191107"+"객체 과제"+"-객체 프로그램으로 삼각형 면적 구하기");
+		
+		trArea tr1 = new trArea();
+		
+		tr1.x=10; tr1.y=20;
+		double trArea = tr1.fn_trArea();
+		
+		System.out.println("삼각형 면적 = "+trArea);
+		
+	}
+}
+
+class trArea
+{
+	double x,y;
+	trArea(){}
+	public double fn_trArea()
+	{
+		double result;
+		result = this.x * this.y * 0.5;
+		return result;
+	}
+}
+
+//// 7/12
+
+package io.github.kimhj2028;
+
+public class home3_3
+{
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191107"+"객체 과제"+"-객체 프로그램으로 사각형 면적 구하기");
+		
+		sqArea sq1 = new sqArea();
+		
+		sq1.x=10; sq1.y=20;
+		double sqArea = sq1.fn_sqArea();
+		System.out.println("사각형 면적 = "+ sqArea);
+		
+	}
+}
+
+class sqArea
+{
+	double x,y;
+	sqArea(){}
+	public double fn_sqArea()
+	{
+		double result;
+		result = this.x * this.y;
+		return result;
+	}
+}
+
+///// 8/12
+
+package io.github.kimhj2028;
+
+public class home3_4
+{
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191107"+"객체 과제"+"-객체 프로그램으로 x,y곱 구하기");
+		
+		Mul mul1 = new Mul();
+		
+		mul1.x=10; mul1.y=20;
+		double mul = mul1.fn_Mul();
+		
+		System.out.println("사각형 면적 = "+ mul);
+		
+	}
+}
+
+class Mul
+{
+	double x,y;
+	Mul(){}
+	public double fn_Mul()
+	{
+		double result;
+		result = this.x * this.y;
+		return result;
+	}
+}
+
+///// 9/12
+
+package io.github.kimhj2028;
+
+public class Home3_2
+{
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191107"+"객체 과제"+"-자바빈 프로그램으로 삼각형 면적 구하기");
+		
+		trArea tr1 = new trArea();
+		
+		tr1.setTrX(10.0); tr1.setTrY(20.0);
+		
+		double trArea = tr1.fn_trArea();
+		
+		System.out.println("삼각형 면적 = "+trArea);
+		
+	}
+}
+
+class trArea
+{
+	private double x,y;
+	
+	public void setTrX(double x)
+	{
+		this.x = x;
+	}
+	public void setTrY(double y)
+	{
+		this.y = y;
+	}
+	public double getTrX()
+	{
+		return this.x;
+	}
+	public double getTrY()
+	{
+		return this.y;
+	}
+	
+	public double fn_trArea()
+	{
+		return this.x * this.y * 0.5;
+	}
+}
+
+///// 10/12
+
+package io.github.kimhj2028;
+
+public class home3_3
+{
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191107"+"객체 과제"+"-자바빈 프로그램으로 사각형 면적 구하기");
+		
+		sqArea sq1 = new sqArea();
+		
+		sq1.setSqX(10.0); sq1.setSqY(20.0);
+		
+		double sqArea = sq1.fn_sqArea();
+		System.out.println("사각형 면적 = "+ sqArea);
+		
+	}
+}
+
+class sqArea
+{
+	private double x,y;
+	
+	public void setSqX(double x)
+	{
+		this.x = x;
+	}
+	public void setSqY(double y)
+	{
+		this.y = y;
+	}
+	public double getSqX()
+	{
+		return this.x;
+	}
+	public double getSqY()
+	{
+		return this.y;
+	}
+	
+	public double fn_sqArea()
+	{
+		return this.x * this.y;
+	}
+}
+///////// 11/12
+
+package io.github.kimhj2028;
+
+public class home3_4
+{
+	public static void main(String[]args)
+	{
+		System.out.println("김희재"+"-"+"20191107"+"객체 과제"+"-객체 프로그램으로 x,y곱 구하기");
+		
+		Mul mul1 = new Mul();
+		
+		mul1.setMulX(10.0); mul1.setMulY(20.0);
+		
+		double mul = mul1.fn_Mul();
+		
+		System.out.println("사각형 면적 = "+ mul);
+		
+	}
+}
+
+class Mul
+{
+	private double x,y;
+	
+	public void setMulX(double x)
+	{
+		this.x = x;
+	}
+	public void setMulY(double y)
+	{
+		this.y = y;
+	}
+	public double getMulX()
+	{
+		return this.x;
+	}
+	public double getMulY()
+	{
+		return this.y;
+	}
+	
+	public double fn_Mul()
+	{
+		return this.x * this.y;
+	}
+}
+
+////// 끝
