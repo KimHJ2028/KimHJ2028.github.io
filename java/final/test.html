@@ -1,0 +1,317 @@
+package io.github.kimhj2028;
+
+import java.util.Scanner;
+import java.util.*;
+
+public class final1
+{
+	public static void main(String []args)
+	{
+		System.out.println("20151629-"+"김희재-"+ "기말 과제");
+		System.out.println("");
+		
+		
+		////////////////////////////////////////////////
+		// 각 Bus들의 객체 생성 시작
+		// 버스 시간표를 출력하기 위한 시간표
+		Bus BusTimeTable = new Bus("",0,0,0);
+		// 서울행 티켓 객체
+		Seoul stk1 = new Seoul("07:30",18100,1,1);
+		Seoul stk2 = new Seoul("97:30",18100,1,2);
+		Seoul stk3 = new Seoul("11:30",18100,1,3);
+		Seoul stk4 = new Seoul("13:30",18100,1,4);
+		Seoul stk5 = new Seoul("18:30",18100,1,5);
+		Seoul stk6 = new Seoul("21:30",20100,1,6);
+		// 인천행 티켓 객체
+		Incheon itk1 = new Incheon("08:00",15100,1,1);
+		Incheon itk2 = new Incheon("09:30",15100,1,2);
+		Incheon itk3 = new Incheon("11:00",15100,1,3);
+		Incheon itk4 = new Incheon("13:50",15100,1,4);
+		Incheon itk5 = new Incheon("17:00",15100,1,5);
+		Incheon itk6 = new Incheon("22:00",18100,1,6);
+		// 대전행 티켓 객체
+		Daejeon dtk1 = new Daejeon("06:00",12100,1,1);
+		Daejeon dtk2 = new Daejeon("07:30",12100,1,2);
+		Daejeon dtk3 = new Daejeon("11:00",12100,1,3);
+		Daejeon dtk4 = new Daejeon("14:20",12100,1,4);
+		Daejeon dtk5 = new Daejeon("18:10",12100,1,5);
+		Daejeon dtk6 = new Daejeon("23:40",15100,1,6);
+		////////////////////////////////////////////////
+		// 시스템시작
+		System.out.println("부산 시외버스 터미널에 오신것을 환영합니다.");
+		// 행선지 선택 input
+		System.out.println("///////////////////////");
+		System.out.println("원하시는 행선지를 선택해 주세요.");
+		
+		System.out.println("부산 → 서울행 = 1번");
+		System.out.println("부산 → 인천행 = 2번");
+		System.out.println("부산 → 대전행 = 3번");
+		///////////////////////////////////////////////
+		
+		Scanner sc = new Scanner(System.in);
+		int select = sc.nextInt();
+		
+		if(select == 1)
+		{
+			System.out.println("서울행 시외 버스 시간표입니다.");
+			BusTimeTable.printTitle();
+			stk1.printData();
+			stk2.printData();
+			stk3.printData();
+			stk4.printData();
+			stk5.printData();
+			stk6.printData();
+			
+			System.out.println("원하시는 시간에 맞는 차량 번호를  선택해주세요.");
+			int select2 = sc.nextInt();
+			
+			if(select2 == 1)
+			{
+				System.out.println("선택하신 차량 번호는 "+stk1.getNumber()+"호 차량입니다.");
+				stk1.printTicket();
+			}
+			if(select2 == 2)
+			{
+				System.out.println("선택하신 차량 번호는 "+stk2.getNumber()+"호 차량입니다.");
+				stk2.printTicket();
+			}
+			if(select2 == 3)
+			{
+				System.out.println("선택하신 차량 번호는 "+stk3.getNumber()+"호 차량입니다.");
+				stk3.printTicket();
+			}
+			if(select2 == 4)
+			{
+				System.out.println("선택하신 차량 번호는 "+stk4.getNumber()+"호 차량입니다.");
+				stk4.printTicket();
+			}
+			if(select2 == 5)
+			{
+				System.out.println("선택하신 차량 번호는 "+stk5.getNumber()+"호 차량입니다.");
+				stk5.printTicket();
+			}
+			if(select2 == 6)
+			{
+				System.out.println("선택하신 차량 번호는 "+stk6.getNumber()+"호 차량입니다.");
+				stk6.printTicket();
+			}
+		}
+		else if(select == 2)
+		{
+			System.out.println("인천행 시외 버스 시간표입니다.");
+			BusTimeTable.printTitle();
+			itk1.printData();
+			itk2.printData();
+			itk3.printData();
+			itk4.printData();
+			itk5.printData();
+			itk6.printData();
+			
+			System.out.println("원하시는 시간에 맞는 차량 번호를 선택해주세요.");
+			int select2 = sc.nextInt();
+			
+			if(select2 == 1)
+			{
+				System.out.println("선택하신 차량 번호는 "+itk1.getNumber()+"호 차량입니다.");
+				itk1.printTicket();
+			}
+			if(select2 == 2)
+			{
+				System.out.println("선택하신 차량 번호는 "+itk2.getNumber()+"호 차량입니다.");
+				itk2.printTicket();
+			}
+			if(select2 == 3)
+			{
+				System.out.println("선택하신 차량 번호는 "+itk3.getNumber()+"호 차량입니다.");
+				itk3.printTicket();
+			}
+			if(select2 == 4)
+			{
+				System.out.println("선택하신 차량 번호는 "+itk4.getNumber()+"호 차량입니다.");
+				itk4.printTicket();
+			}
+			if(select2 == 5)
+			{
+				System.out.println("선택하신 차량 번호는 "+itk5.getNumber()+"호 차량입니다.");
+				itk5.printTicket();
+			}
+			if(select2 == 6)
+			{
+				System.out.println("선택하신 차량 번호는 "+itk6.getNumber()+"호 차량입니다.");
+				itk6.printTicket();
+			}
+		}
+		else if(select == 3)
+		{
+			System.out.println("대전행 시외 버스 시간표입니다.");
+			BusTimeTable.printTitle();
+			dtk1.printData();
+			dtk2.printData();
+			dtk3.printData();
+			dtk4.printData();
+			dtk5.printData();
+			dtk6.printData();
+			
+			System.out.println("원하시는 시간을 선택해주세요.");
+			int select2 = sc.nextInt();
+			
+			if(select2 == 1)
+			{
+				System.out.println("선택하신 차량 번호는 "+dtk1.getNumber()+"호 차량입니다.");
+				dtk1.printTicket();
+			}
+			if(select2 == 2)
+			{
+				System.out.println("선택하신 차량 번호는 "+dtk2.getNumber()+"호 차량입니다.");
+				dtk2.printTicket();
+			}
+			if(select2 == 3)
+			{
+				System.out.println("선택하신 차량 번호는 "+dtk3.getNumber()+"호 차량입니다.");
+				dtk3.printTicket();
+			}
+			if(select2 == 4)
+			{
+				System.out.println("선택하신 차량 번호는 "+dtk4.getNumber()+"호 차량입니다.");
+				dtk4.printTicket();
+			}
+			if(select2 == 5)
+			{
+				System.out.println("선택하신 차량 번호는 "+dtk5.getNumber()+"호 차량입니다.");
+				dtk5.printTicket();
+			}
+			if(select2 == 6)
+			{
+				System.out.println("선택하신 차량 번호는 "+dtk6.getNumber()+"호 차량입니다.");
+				dtk6.printTicket();
+			}
+		}
+		else
+		{
+			System.out.println("행선지를 정확하게 선택해주세요.");
+			Start();
+		}
+		sc.close();
+		//Start();
+	
+
+		
+	}
+	
+	static void Start()
+	{
+		System.out.println("///////////////////////");
+		System.out.println("원하시는 행선지를 선택해 주세요.");
+		
+		System.out.println("부산 → 서울행 = 1번");
+		System.out.println("부산 → 인천행 = 2번");
+		System.out.println("부산 → 대전행 = 3번");
+		
+		Scanner sc = new Scanner(System.in);
+		int select = sc.nextInt();
+		
+		if(select == 1)
+		{
+			System.out.println("서울행 시외 버스 시간표입니다.");
+		}
+		else if(select == 2)
+		{
+			System.out.println("인천행 시외 버스 시간표입니다.");
+		}
+		else if(select == 3)
+		{
+			System.out.println("대전행 시외 버스 시간표입니다.");
+		}
+		else
+		{
+			System.out.println("행선지를 정확하게 선택해주세요.");
+			Start();
+		}
+		sc.close();
+	}
+	// 함수로 반복해서 사용하려 했는데 아직은 잘 안되니 보류, 결과화면만 출력되게 만들어둠.
+}
+
+class Bus extends final1
+{
+	String time; int price , quantity, number; // 도착지 , 가격 , 장수 설정 변수
+	
+	public Bus(String time, int price, int quantity, int number)
+	{
+		this.time = time;
+		this.price = price;
+		this.quantity = quantity;
+		this.number = number;
+	}
+	public String getTime()
+	{
+		return this.time;
+	}
+	public int getPrice()
+	{
+		return this.price;
+	}
+	public int getQantity()
+	{
+		return this.quantity;
+	}
+	public int getTotal()
+	{
+		return this.price * this.quantity;
+	}
+	void printTitle()
+	{
+		System.out.println("행선지\t단가\t수량\t금액\t차량번호");
+	}
+	void printData()
+	{
+		System.out.println(this.time+"\t"+this.price+"\t"+this.quantity+"\t"+this.number);
+	}
+	void printTicket()
+	{
+		System.out.println("예매하신 버스의 출발 시각은"+this.time+""+"이며, 가격은"+this.price+"입니다.");
+	}
+}
+
+class Seoul extends Bus
+{
+	int number;
+	public Seoul(String time, int price, int quantity , int number)
+	{
+		super(time,price,quantity,number);
+		this.number = number;
+	}
+	public int getNumber()
+	{
+		return this.number;
+	}
+}
+
+class Incheon extends Bus
+{
+	int number;
+	public Incheon(String time, int price, int quantity, int number)
+	{
+		super(time,price,quantity,number);
+		this.number = number;
+	}
+	public int getNumber()
+	{
+		return this.number;
+	}
+}
+
+class Daejeon extends Bus
+{
+	int number;
+	public Daejeon(String time, int price, int quantity, int number)
+	{
+		super(time,price,quantity,number);
+		this.number = number;
+	}
+	public int getNumber()
+	{
+		return this.number;
+	}
+}
+
