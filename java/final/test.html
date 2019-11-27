@@ -1,19 +1,12 @@
-package io.github.kimhj2028;
-
-import java.util.Scanner;
-import java.util.*;
-
-public class final1
-{
-	public static void main(String []args)
+public static void main(String []args)
 	{
 		System.out.println("20151629-"+"김희재-"+ "기말 과제");
 		System.out.println("");
 		
-		
+		// 결과값이 파일로 나올수 있도록 할 것.
 		////////////////////////////////////////////////
-		// 각 Bus들의 객체 생성 시작
-		// 버스 시간표를 출력하기 위한 시간표
+		// 각 Train들의 객체 생성 시작
+		// 열차 시간표를 출력하기 위한 시간표
 		Bus BusTimeTable = new Bus("",0,0,0);
 		// 서울행 티켓 객체
 		Seoul stk1 = new Seoul("07:30",18100,1,1);
@@ -38,7 +31,7 @@ public class final1
 		Daejeon dtk6 = new Daejeon("23:40",15100,1,6);
 		////////////////////////////////////////////////
 		// 시스템시작
-		System.out.println("부산 시외버스 터미널에 오신것을 환영합니다.");
+		System.out.println("부산역에 오신것을 환영합니다.");
 		// 행선지 선택 input
 		System.out.println("///////////////////////");
 		System.out.println("원하시는 행선지를 선택해 주세요.");
@@ -53,7 +46,7 @@ public class final1
 		
 		if(select == 1)
 		{
-			System.out.println("서울행 시외 버스 시간표입니다.");
+			System.out.println("서울역 행 KTX 시간표입니다.");
 			BusTimeTable.printTitle();
 			stk1.printData();
 			stk2.printData();
@@ -98,7 +91,7 @@ public class final1
 		}
 		else if(select == 2)
 		{
-			System.out.println("인천행 시외 버스 시간표입니다.");
+			System.out.println("인천역 행 KTX 시간표입니다.");
 			BusTimeTable.printTitle();
 			itk1.printData();
 			itk2.printData();
@@ -118,7 +111,7 @@ public class final1
 			if(select2 == 2)
 			{
 				System.out.println("선택하신 차량 번호는 "+itk2.getNumber()+"호 차량입니다.");
-				itk2.printTicket();
+				itk2.printTicket();6
 			}
 			if(select2 == 3)
 			{
@@ -143,7 +136,7 @@ public class final1
 		}
 		else if(select == 3)
 		{
-			System.out.println("대전행 시외 버스 시간표입니다.");
+			System.out.println("대전역 행 KTX 시간표입니다.");
 			BusTimeTable.printTitle();
 			dtk1.printData();
 			dtk2.printData();
@@ -212,15 +205,15 @@ public class final1
 		
 		if(select == 1)
 		{
-			System.out.println("서울행 시외 버스 시간표입니다.");
+			System.out.println("서울역 행 KTX 시간표입니다.");
 		}
 		else if(select == 2)
 		{
-			System.out.println("인천행 시외 버스 시간표입니다.");
+			System.out.println("인천역 행 KTX 시간표입니다.");
 		}
 		else if(select == 3)
 		{
-			System.out.println("대전행 시외 버스 시간표입니다.");
+			System.out.println("대전역 행  KTX 시간표입니다.");
 		}
 		else
 		{
@@ -232,11 +225,11 @@ public class final1
 	// 함수로 반복해서 사용하려 했는데 아직은 잘 안되니 보류, 결과화면만 출력되게 만들어둠.
 }
 
-class Bus extends final1
+class Train extends final1
 {
 	String time; int price , quantity, number; // 도착지 , 가격 , 장수 설정 변수
 	
-	public Bus(String time, int price, int quantity, int number)
+	public Train(String time, int price, int quantity, int number)
 	{
 		this.time = time;
 		this.price = price;
@@ -273,13 +266,11 @@ class Bus extends final1
 	}
 }
 
-class Seoul extends Bus
+class Seoul extends Train
 {
-	int number;
 	public Seoul(String time, int price, int quantity , int number)
 	{
 		super(time,price,quantity,number);
-		this.number = number;
 	}
 	public int getNumber()
 	{
@@ -287,13 +278,11 @@ class Seoul extends Bus
 	}
 }
 
-class Incheon extends Bus
+class Incheon extends Train
 {
-	int number;
 	public Incheon(String time, int price, int quantity, int number)
 	{
 		super(time,price,quantity,number);
-		this.number = number;
 	}
 	public int getNumber()
 	{
@@ -301,13 +290,11 @@ class Incheon extends Bus
 	}
 }
 
-class Daejeon extends Bus
+class Daejeon extends Train
 {
-	int number;
 	public Daejeon(String time, int price, int quantity, int number)
 	{
 		super(time,price,quantity,number);
-		this.number = number;
 	}
 	public int getNumber()
 	{
@@ -315,3 +302,23 @@ class Daejeon extends Bus
 	}
 }
 
+printTicket()
+{
+	System.out.println("┌────────────┐");
+	System.out.println("│출발시간 : "+this.time)	 │");
+	System.out.println("│
+	System.out.println("│목적지 : "
+	System.out.println("│
+	System.out.println("│
+	System.out.println("│
+	System.out.println("│
+	System.out.println("│
+	System.out.println("│
+	System.out.println("│
+	System.out.println("│
+	System.out.println("│
+	System.out.println("│
+	System.out.println("└───────────┘");
+
+	System.out.println("------------------------------");
+}
