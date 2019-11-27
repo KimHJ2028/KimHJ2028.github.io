@@ -1,1 +1,716 @@
+package io.github.kimhj2028;
 
+public class student {
+	private String name;
+	
+	public student() {}
+	public String getName()
+	{
+		return this.name;
+	}
+	public void setName(String name)
+	{
+		this.name = name;
+	}
+	public String toString()
+	{
+		return "학생이름 = "+this.getName();
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Book {
+
+	private String title;
+	private String author;
+	private student student;
+	
+	public Book(String title)
+	{
+		this.title = title;
+	}
+	
+	public void setTitle(String title)
+	{
+		this.title = title;
+	}
+	
+	public String getTitle()
+	{
+		return this.title;
+	}
+	public void setAuthor(String author)
+	{
+		this.author = author;
+	}
+	public String getAuthor()
+	{
+		return this.author;
+	}
+	public void setStudent(student student)
+	{
+		this.student = student;
+	}
+	public student getStudent()
+	{
+		return this.student;
+	}
+	public String toString()
+	{
+		String available;
+		if(this.getStudent() == null)
+		{
+			available = "대출가능";
+		}
+		else
+		{
+			available = "대출자 "+this.getStudent().getName();
+		}
+		return "제목 ="+this.getTitle()+", 저자 ="+this.getAuthor()+","+available;
+	}
+	
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+import java.util.ArrayList;
+import io.github.kimhj2028.Book;
+import io.github.kimhj2028.student;
+
+public class BookStore {
+
+	public String storeName;
+	public ArrayList<Book> books;
+	public ArrayList<student> student;
+	
+	public BookStore(String storeName)
+	{
+		this.storeName = storeName;
+		books = new ArrayList<Book>();
+		student = new ArrayList<student>();
+	}
+	
+	public String getStoreName()
+	{
+		return this.storeName;
+	}
+	
+	public ArrayList<Book> getBooks()
+	{
+		return this.books;
+	}
+	public ArrayList<student> getStudent()
+	{
+		return this.student;
+	}
+	public void addBook(Book book)
+	{
+		this.books.add(book);
+	}
+	public void removeBook(Book book)
+	{
+		this.books.remove(book);
+	}
+	public void addStudent(student student)
+	{
+		this.student.add(student);
+	}
+	public void removeStudent(student student)
+	{
+		this.student.remove(student);
+	}
+	public boolean checkOut(Book book, student student)
+	{
+		if(book.getStudent() == null)
+		{
+			book.setStudent(student);
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	public boolean checkIn(Book book)
+	{
+		if(book.getStudent() != null)
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
+	}
+	public ArrayList<Book> getBooksForStudent(student student)
+	{
+		ArrayList<Book> result = new ArrayList<Book>();
+		for(Book aBook : this.getBooks())
+		{
+			if((aBook.getStudent() != null) && (aBook.getStudent().getName().equals(student.getName())))
+			{
+				result.add(aBook);
+			}
+		}
+		return result;
+	}
+	public ArrayList<Book> getAvailableBooks()
+	{
+		ArrayList<Book> result = new ArrayList<Book>();
+		for(Book aBook : this.getBooks())
+		{
+			if(aBook.getStudent() == null)
+			{
+				result.add(aBook);
+			}
+		}
+		return result;
+	}
+	public ArrayList<Book> getUnavailableBooks()
+	{
+		ArrayList<Book> result = new ArrayList<Book>();
+		for(Book aBook : this.getBooks())
+		{
+			if(aBook.getStudent() != null)
+			{
+				result.add(aBook);
+			}
+		}
+		return result;
+	}
+	public String toString()
+	{
+		return this.getStoreName()+"의 보유책 = "+this.getBooks().size()+"권, 회원수 = "+this.getStudent().size()+"명";
+	}
+	
+	public void printStatus()
+	{
+		System.out.println("--- 도서관 현황 ---\n "+this.toString());
+		for(Book aBook : this.getBooks())
+		{
+			System.out.println(aBook.toString());
+		}
+		for(student student : this.getStudent())
+		{
+			int count = this.getBooksForStudent(student).size();
+			System.out.println(student+"은/는"+count+"권 대출중");
+		}
+		System.out.println("현재 대출 가능 책 : "+this.getAvailableBooks().size());
+		System.out.println("---리포트 종료---");
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+import io.github.kimhj2028.Book;
+import io.github.kimhj2028.BookStore;
+import io.github.kimhj2028.student;
+
+public class MyStore {
+	public static void main(String[] args)
+	{
+	// 생성 시작
+	
+	BookStore myStore = new BookStore("도서관");
+	Book book1 = new Book("홍길동전");
+	Book book2 = new Book("심청전");
+	
+	book1.setAuthor("허균");
+	book2.setAuthor("미상");
+	
+	student stud1 = new student();
+	student stud2 = new student();
+	
+	stud1.setName("이몽룡");
+	stud2.setName("변학도");
+	
+	myStore.addBook(book1); myStore.addBook(book2);
+	myStore.addStudent(stud1); myStore.addStudent(stud2);
+	
+	System.out.println("도서 관리 시스템 생성");
+	myStore.printStatus();
+	
+	System.out.println("book1 홍길동전을 stud2 변학도에게 대출");
+	myStore.checkOut(book1, stud2);
+	myStore.printStatus();
+	
+	System.out.println("book1 홍길동전 반납");
+	myStore.checkIn(book1);
+	
+	System.out.println("book2 심청전을 stud1 이몽룡에게 대출");
+	myStore.checkOut(book2, stud1);
+	myStore.printStatus();
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex14_1 {
+	public static void main(String []args)
+	{
+		System.out.println("20151629-"+"김희재-"+ "쓰레드 예제");
+		
+		ThreadNew1 tn1 = new ThreadNew1();
+		tn1.start();
+	}
+}
+
+class ThreadNew1 extends Thread
+{
+	@Override
+	public void run()
+	{
+		try
+		{
+			for(int i=0; i<10; i++)
+			{
+				Thread.sleep(1000);
+				System.out.println("Thread : "+ i);
+			}
+		}
+		catch(InterruptedException e)
+		{
+			System.out.println(e);
+		}
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex14_2 {
+	public static void main(String []args)
+	{
+		System.out.println("20151629-"+"김희재-"+ "쓰레드 예제");
+		
+
+		ThreadNew2 tn1 = new ThreadNew2("쓰레드1");
+		ThreadNew2 tn2 = new ThreadNew2("쓰레드2");
+		
+		tn1.start();
+		tn2.start();
+	}
+}
+
+class ThreadNew2 extends Thread
+{
+	public ThreadNew2(String str)
+	{
+		super(str);
+	}
+	public ThreadNew2() {}
+	
+	@Override
+	public void run()
+	{
+		try
+		{
+			for(int i=0; i<10; i++)
+			{
+				Thread.sleep(1000);
+			System.out.println(this.getName()+" "+ i);
+			}
+		}
+		catch(InterruptedException e)
+		{
+			System.out.println(e);
+		}
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex14_3 {
+	public static void main(String []args)
+	{
+		System.out.println("20151629-"+"김희재-"+ "쓰레드 예제");
+		
+		RunNew1 rn1 = new RunNew1();
+		Thread t1 = new Thread(rn1);
+		
+		t1.start();
+	}
+}
+
+class RunNew1 implements Runnable
+{
+	@Override
+	public void run()
+	{
+		try
+		{
+			for(int i=0; i<10; i++)
+			{
+				Thread.sleep(1000);
+				System.out.println("Thread : "+i);
+			}
+		}
+		catch(InterruptedException e)
+		{
+			System.out.println(e);
+		}
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028;
+
+public class Ex14_4 {
+	public static void main(String []args)
+	{
+		System.out.println("20151629-"+"김희재-"+ "쓰레드 예제");
+		
+		
+		RunNew2 rn1 = new RunNew2("쓰레드1");
+		RunNew2 rn2 = new RunNew2("쓰레드2");
+		
+		Thread t1 = new Thread(rn1);
+		Thread t2 = new Thread(rn2);
+		
+		t1.start();
+		t2.start();
+	}
+}
+
+class RunNew2 implements Runnable
+{
+	private String str;
+	public RunNew2(String str)
+	{
+		this.str = str;
+	}
+	@Override
+	public void run()
+	{
+		try
+		{
+			for(int i=0; i<10; i++)
+			{
+				Thread.sleep(1000);
+				System.out.println(this.str+" "+i);
+			}
+		}
+		catch(InterruptedException e)
+		{
+			System.out.println(e);
+		}
+	}
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////
+package io.github.kimhj2028; //project 이름은 javaClass로 할 것
+							 //package 이름은 org.javaro.lecture로 할 것
+
+import java.util.Scanner;
+import java.util.*;
+
+
+public class final1 // class 이름은 MainProg로 할 것
+{
+	public static void main(String []args)
+	{
+		System.out.println("20151629-"+"김희재-"+ "기말 과제");
+		System.out.println("");
+		
+		// 결과값이 파일로 나올수 있도록 할 것.
+		////////////////////////////////////////////////
+		// 각 Bus들의 객체 생성 시작
+		// 버스 시간표를 출력하기 위한 시간표
+		Bus BusTimeTable = new Bus("",0,0,0);
+		// 서울행 티켓 객체
+		Seoul stk1 = new Seoul("07:30",18100,1,1);
+		Seoul stk2 = new Seoul("97:30",18100,1,2);
+		Seoul stk3 = new Seoul("11:30",18100,1,3);
+		Seoul stk4 = new Seoul("13:30",18100,1,4);
+		Seoul stk5 = new Seoul("18:30",18100,1,5);
+		Seoul stk6 = new Seoul("21:30",20100,1,6);
+		// 인천행 티켓 객체
+		Incheon itk1 = new Incheon("08:00",15100,1,1);
+		Incheon itk2 = new Incheon("09:30",15100,1,2);
+		Incheon itk3 = new Incheon("11:00",15100,1,3);
+		Incheon itk4 = new Incheon("13:50",15100,1,4);
+		Incheon itk5 = new Incheon("17:00",15100,1,5);
+		Incheon itk6 = new Incheon("22:00",18100,1,6);
+		// 대전행 티켓 객체
+		Daejeon dtk1 = new Daejeon("06:00",12100,1,1);
+		Daejeon dtk2 = new Daejeon("07:30",12100,1,2);
+		Daejeon dtk3 = new Daejeon("11:00",12100,1,3);
+		Daejeon dtk4 = new Daejeon("14:20",12100,1,4);
+		Daejeon dtk5 = new Daejeon("18:10",12100,1,5);
+		Daejeon dtk6 = new Daejeon("23:40",15100,1,6);
+		////////////////////////////////////////////////
+		// 시스템시작
+		System.out.println("부산 시외버스 터미널에 오신것을 환영합니다.");
+		// 행선지 선택 input
+		System.out.println("///////////////////////");
+		System.out.println("원하시는 행선지를 선택해 주세요.");
+		
+		System.out.println("부산 → 서울행 = 1번");
+		System.out.println("부산 → 인천행 = 2번");
+		System.out.println("부산 → 대전행 = 3번");
+		///////////////////////////////////////////////
+		
+		Scanner sc = new Scanner(System.in);
+		int select = sc.nextInt();
+		
+		if(select == 1)
+		{
+			System.out.println("서울행 시외 버스 시간표입니다.");
+			BusTimeTable.printTitle();
+			stk1.printData();
+			stk2.printData();
+			stk3.printData();
+			stk4.printData();
+			stk5.printData();
+			stk6.printData();
+			
+			System.out.println("원하시는 시간에 맞는 차량 번호를  선택해주세요.");
+			int select2 = sc.nextInt();
+			
+			if(select2 == 1)
+			{
+				System.out.println("선택하신 차량 번호는 "+stk1.getNumber()+"호 차량입니다.");
+				stk1.printTicket();
+			}
+			if(select2 == 2)
+			{
+				System.out.println("선택하신 차량 번호는 "+stk2.getNumber()+"호 차량입니다.");
+				stk2.printTicket();
+			}
+			if(select2 == 3)
+			{
+				System.out.println("선택하신 차량 번호는 "+stk3.getNumber()+"호 차량입니다.");
+				stk3.printTicket();
+			}
+			if(select2 == 4)
+			{
+				System.out.println("선택하신 차량 번호는 "+stk4.getNumber()+"호 차량입니다.");
+				stk4.printTicket();
+			}
+			if(select2 == 5)
+			{
+				System.out.println("선택하신 차량 번호는 "+stk5.getNumber()+"호 차량입니다.");
+				stk5.printTicket();
+			}
+			if(select2 == 6)
+			{
+				System.out.println("선택하신 차량 번호는 "+stk6.getNumber()+"호 차량입니다.");
+				stk6.printTicket();
+			}
+		}
+		else if(select == 2)
+		{
+			System.out.println("인천행 시외 버스 시간표입니다.");
+			BusTimeTable.printTitle();
+			itk1.printData();
+			itk2.printData();
+			itk3.printData();
+			itk4.printData();
+			itk5.printData();
+			itk6.printData();
+			
+			System.out.println("원하시는 시간에 맞는 차량 번호를 선택해주세요.");
+			int select2 = sc.nextInt();
+			
+			if(select2 == 1)
+			{
+				System.out.println("선택하신 차량 번호는 "+itk1.getNumber()+"호 차량입니다.");
+				itk1.printTicket();
+			}
+			if(select2 == 2)
+			{
+				System.out.println("선택하신 차량 번호는 "+itk2.getNumber()+"호 차량입니다.");
+				itk2.printTicket();
+			}
+			if(select2 == 3)
+			{
+				System.out.println("선택하신 차량 번호는 "+itk3.getNumber()+"호 차량입니다.");
+				itk3.printTicket();
+			}
+			if(select2 == 4)
+			{
+				System.out.println("선택하신 차량 번호는 "+itk4.getNumber()+"호 차량입니다.");
+				itk4.printTicket();
+			}
+			if(select2 == 5)
+			{
+				System.out.println("선택하신 차량 번호는 "+itk5.getNumber()+"호 차량입니다.");
+				itk5.printTicket();
+			}
+			if(select2 == 6)
+			{
+				System.out.println("선택하신 차량 번호는 "+itk6.getNumber()+"호 차량입니다.");
+				itk6.printTicket();
+			}
+		}
+		else if(select == 3)
+		{
+			System.out.println("대전행 시외 버스 시간표입니다.");
+			BusTimeTable.printTitle();
+			dtk1.printData();
+			dtk2.printData();
+			dtk3.printData();
+			dtk4.printData();
+			dtk5.printData();
+			dtk6.printData();
+			
+			System.out.println("원하시는 시간을 선택해주세요.");
+			int select2 = sc.nextInt();
+			
+			if(select2 == 1)
+			{
+				System.out.println("선택하신 차량 번호는 "+dtk1.getNumber()+"호 차량입니다.");
+				dtk1.printTicket();
+			}
+			if(select2 == 2)
+			{
+				System.out.println("선택하신 차량 번호는 "+dtk2.getNumber()+"호 차량입니다.");
+				dtk2.printTicket();
+			}
+			if(select2 == 3)
+			{
+				System.out.println("선택하신 차량 번호는 "+dtk3.getNumber()+"호 차량입니다.");
+				dtk3.printTicket();
+			}
+			if(select2 == 4)
+			{
+				System.out.println("선택하신 차량 번호는 "+dtk4.getNumber()+"호 차량입니다.");
+				dtk4.printTicket();
+			}
+			if(select2 == 5)
+			{
+				System.out.println("선택하신 차량 번호는 "+dtk5.getNumber()+"호 차량입니다.");
+				dtk5.printTicket();
+			}
+			if(select2 == 6)
+			{
+				System.out.println("선택하신 차량 번호는 "+dtk6.getNumber()+"호 차량입니다.");
+				dtk6.printTicket();
+			}
+		}
+		else
+		{
+			System.out.println("행선지를 정확하게 선택해주세요.");
+			Start();
+		}
+		sc.close();
+		//Start();
+	
+
+		
+	}
+	
+	static void Start()
+	{
+		System.out.println("///////////////////////");
+		System.out.println("원하시는 행선지를 선택해 주세요.");
+		
+		System.out.println("부산 → 서울행 = 1번");
+		System.out.println("부산 → 인천행 = 2번");
+		System.out.println("부산 → 대전행 = 3번");
+		
+		Scanner sc = new Scanner(System.in);
+		int select = sc.nextInt();
+		
+		if(select == 1)
+		{
+			System.out.println("서울행 시외 버스 시간표입니다.");
+		}
+		else if(select == 2)
+		{
+			System.out.println("인천행 시외 버스 시간표입니다.");
+		}
+		else if(select == 3)
+		{
+			System.out.println("대전행 시외 버스 시간표입니다.");
+		}
+		else
+		{
+			System.out.println("행선지를 정확하게 선택해주세요.");
+			Start();
+		}
+		sc.close();
+	}
+	// 함수로 반복해서 사용하려 했는데 아직은 잘 안되니 보류, 결과화면만 출력되게 만들어둠.
+}
+
+class Bus extends final1
+{
+	String time; int price , quantity, number; // 도착지 , 가격 , 장수 설정 변수
+	
+	public Bus(String time, int price, int quantity, int number)
+	{
+		this.time = time;
+		this.price = price;
+		this.quantity = quantity;
+		this.number = number;
+	}
+	public String getTime()
+	{
+		return this.time;
+	}
+	public int getPrice()
+	{
+		return this.price;
+	}
+	public int getQantity()
+	{
+		return this.quantity;
+	}
+	public int getTotal()
+	{
+		return this.price * this.quantity;
+	}
+	void printTitle()
+	{
+		System.out.println("행선지\t단가\t수량\t금액\t차량번호");
+	}
+	void printData()
+	{
+		System.out.println(this.time+"\t"+this.price+"\t"+this.quantity+"\t"+this.number);
+	}
+	void printTicket()
+	{
+		System.out.println("예매하신 버스의 출발 시각은"+this.time+""+"이며, 가격은"+this.price+"입니다.");
+	}
+}
+
+class Seoul extends Bus
+{
+	int number;
+	public Seoul(String time, int price, int quantity , int number)
+	{
+		super(time,price,quantity,number);
+		this.number = number;
+	}
+	public int getNumber()
+	{
+		return this.number;
+	}
+}
+
+class Incheon extends Bus
+{
+	int number;
+	public Incheon(String time, int price, int quantity, int number)
+	{
+		super(time,price,quantity,number);
+		this.number = number;
+	}
+	public int getNumber()
+	{
+		return this.number;
+	}
+}
+
+class Daejeon extends Bus
+{
+	int number;
+	public Daejeon(String time, int price, int quantity, int number)
+	{
+		super(time,price,quantity,number);
+		this.number = number;
+	}
+	public int getNumber()
+	{
+		return this.number;
+	}
+}
