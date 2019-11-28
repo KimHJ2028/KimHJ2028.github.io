@@ -12,9 +12,11 @@ public class final1
 		
 		// 결과값이 파일로 나올수 있도록 할 것.
 		////////////////////////////////////////////////
+		
 		// 각 Train들의 객체 생성 시작
 		// 열차 시간표를 출력하기 위한 시간표
 		Train TrainTimeTable = new Train("",0,0,0);
+		Train Tr = new Train();
 		// 서울행 티켓 객체
 		Seoul stk1 = new Seoul("07:30",18100,1,1);
 		Seoul stk2 = new Seoul("97:30",18100,1,2);
@@ -51,6 +53,7 @@ public class final1
 		Scanner sc = new Scanner(System.in);
 		int select = sc.nextInt();
 		
+		///////////////////////////////////////서울행 선택
 		if(select == 1)
 		{
 			System.out.println("서울역 행 KTX 시간표입니다.");
@@ -69,33 +72,96 @@ public class final1
 			{
 				System.out.println("선택하신 차량 번호는 "+stk1.getNumber()+"호 차량입니다.");
 				stk1.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = stk1.getQantity() + select3;
+				int tPrice = stk1.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+stk1.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(stk1.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
 			if(select2 == 2)
 			{
 				System.out.println("선택하신 차량 번호는 "+stk2.getNumber()+"호 차량입니다.");
 				stk2.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = stk2.getQantity() + select3;
+				int tPrice = stk2.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+stk2.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(stk2.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
 			if(select2 == 3)
 			{
 				System.out.println("선택하신 차량 번호는 "+stk3.getNumber()+"호 차량입니다.");
 				stk3.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = stk3.getQantity() + select3;
+				int tPrice = stk3.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+stk3.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(stk3.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
 			if(select2 == 4)
 			{
 				System.out.println("선택하신 차량 번호는 "+stk4.getNumber()+"호 차량입니다.");
 				stk4.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = stk4.getQantity() + select3;
+				int tPrice = stk4.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+stk4.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(stk4.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
 			if(select2 == 5)
 			{
 				System.out.println("선택하신 차량 번호는 "+stk5.getNumber()+"호 차량입니다.");
 				stk5.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = stk5.getQantity() + select3;
+				int tPrice = stk5.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+stk5.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(stk5.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
 			if(select2 == 6)
 			{
 				System.out.println("선택하신 차량 번호는 "+stk6.getNumber()+"호 차량입니다.");
 				stk6.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = stk6.getQantity() + select3;
+				int tPrice = stk6.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+stk6.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(stk6.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
 		}
+		//////////////////////////////////서울행 종료
+		
+		///////////////////////////////// 인천행 선택
 		else if(select == 2)
 		{
 			System.out.println("인천역 행 KTX 시간표입니다.");
@@ -114,33 +180,96 @@ public class final1
 			{
 				System.out.println("선택하신 차량 번호는 "+itk1.getNumber()+"호 차량입니다.");
 				itk1.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = itk1.getQantity() + select3;
+				int tPrice = itk1.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+itk1.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(itk1.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
 			if(select2 == 2)
 			{
 				System.out.println("선택하신 차량 번호는 "+itk2.getNumber()+"호 차량입니다.");
 				itk2.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = itk2.getQantity() + select3;
+				int tPrice = itk2.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+itk2.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(itk2.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
 			if(select2 == 3)
 			{
 				System.out.println("선택하신 차량 번호는 "+itk3.getNumber()+"호 차량입니다.");
 				itk3.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = itk3.getQantity() + select3;
+				int tPrice = itk3.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+itk3.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(itk3.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
 			if(select2 == 4)
 			{
 				System.out.println("선택하신 차량 번호는 "+itk4.getNumber()+"호 차량입니다.");
 				itk4.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = itk4.getQantity() + select3;
+				int tPrice = itk4.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+itk4.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(itk4.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
 			if(select2 == 5)
 			{
 				System.out.println("선택하신 차량 번호는 "+itk5.getNumber()+"호 차량입니다.");
 				itk5.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = itk5.getQantity() + select3;
+				int tPrice = itk5.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+itk5.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(itk5.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
 			if(select2 == 6)
 			{
 				System.out.println("선택하신 차량 번호는 "+itk6.getNumber()+"호 차량입니다.");
 				itk6.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = itk6.getQantity() + select3;
+				int tPrice = itk6.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+itk6.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(itk6.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
 		}
+		////////////////////////////////// 인천행 종료
+		
+		////////////////////////////////// 대전행 선택
 		else if(select == 3)
 		{
 			System.out.println("대전역 행 KTX 시간표입니다.");
@@ -155,49 +284,173 @@ public class final1
 			System.out.println("원하시는 시간을 선택해주세요.");
 			int select2 = sc.nextInt();
 			
+			// 1호차 선택
 			if(select2 == 1)
 			{
 				System.out.println("선택하신 차량 번호는 "+dtk1.getNumber()+"호 차량입니다.");
 				dtk1.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = dtk6.getQantity() + select3;
+				int tPrice = dtk6.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+dtk6.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(dtk6.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
 			}
+			// 2호차 선택
 			if(select2 == 2)
 			{
 				System.out.println("선택하신 차량 번호는 "+dtk2.getNumber()+"호 차량입니다.");
 				dtk2.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = dtk2.getQantity() + select3;
+				int tPrice = dtk2.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+dtk2.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(dtk6.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
+			// 3호차 선택
 			if(select2 == 3)
 			{
 				System.out.println("선택하신 차량 번호는 "+dtk3.getNumber()+"호 차량입니다.");
 				dtk3.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = dtk3.getQantity() + select3;
+				int tPrice = dtk3.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+dtk3.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(dtk3.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
+			// 4호차 선택
 			if(select2 == 4)
 			{
 				System.out.println("선택하신 차량 번호는 "+dtk4.getNumber()+"호 차량입니다.");
 				dtk4.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				
+				int total = dtk4.getQantity() + select3;
+				int tPrice = dtk4.getPrice() * total;
+				System.out.println("선택하신 차량 번호는 "+dtk4.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(dtk4.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
+			// 5호차 선택
 			if(select2 == 5)
 			{
 				System.out.println("선택하신 차량 번호는 "+dtk5.getNumber()+"호 차량입니다.");
 				dtk5.printTicket();
+				
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = dtk5.getQantity() + select3;
+				int tPrice = dtk5.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+dtk5.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(dtk5.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
+			// 6호차 선택
 			if(select2 == 6)
 			{
 				System.out.println("선택하신 차량 번호는 "+dtk6.getNumber()+"호 차량입니다.");
 				dtk6.printTicket();
+				System.out.println("원하시는 구매 수량을 입력해 주세요.");
+				int select3 = sc.nextInt();
+				int total = dtk6.getQantity() + select3;
+				int tPrice = dtk6.getPrice() * total;
+				
+				System.out.println("선택하신 차량 번호는 "+dtk6.getNumber()+"호 차량입니다.");
+				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				System.out.println(dtk6.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 			}
 		}
+		////////////////////////////////// 대전행 종료
+		
 		else
 		{
 			System.out.println("행선지를 정확하게 선택해주세요.");
-			Start();
+			
 		}
-		sc.close();
-		//Start();
+		sc.close();	
+	}
 	
+	static void Starting(Seoul Seuol)
+	{
 
+	}
+	
+	static void Starting(Incheon Incheon)
+	{
 		
 	}
 	
+	static void Starting(Daejeon Daejeon)
+	{
+		
+	}
+	
+	// 함수로 반복해서 사용하려 했는데 아직은 잘 안되니 보류, 결과화면만 출력되게 만들어둠.
+}
+
+class Train extends final1
+{
+	String time; int price , quantity,  number, Selection; // 도착지 , 가격 , 장수 설정 변수
+	
+	public Train() {}
+	
+	public Train(String time, int price, int quantity, int number)
+	{
+		this.time = time;
+		this.price = price;
+		this.quantity = quantity;
+		this.number = number;
+	}
+	public String getTime()
+	{
+		return this.time;
+	}
+	public int getPrice()
+	{
+		return this.price;
+	}
+	public int getQantity()
+	{
+		return this.quantity;
+	}
+	public int getSelection()
+	{
+		return this.Selection;
+	}
+	void printTitle()
+	{
+		System.out.println("행선지\t단가\t수량\t차량번호");
+	}
+	void printData()
+	{
+		System.out.println(this.time+"\t"+this.price+"\t"+this.quantity+"\t"+this.number);
+	}
+	void printTicket()
+	{
+		System.out.println("예매하신 KTX의 출발 시각은"+this.time+""+"이며, 가격은"+this.price+"입니다.");
+	}
+	///////////////////
 	static void Start()
 	{
 		System.out.println("///////////////////////");
@@ -229,48 +482,7 @@ public class final1
 		}
 		sc.close();
 	}
-	// 함수로 반복해서 사용하려 했는데 아직은 잘 안되니 보류, 결과화면만 출력되게 만들어둠.
-}
-
-class Train extends final1
-{
-	String time; int price , quantity, number; // 도착지 , 가격 , 장수 설정 변수
 	
-	public Train(String time, int price, int quantity, int number)
-	{
-		this.time = time;
-		this.price = price;
-		this.quantity = quantity;
-		this.number = number;
-	}
-	public String getTime()
-	{
-		return this.time;
-	}
-	public int getPrice()
-	{
-		return this.price;
-	}
-	public int getQantity()
-	{
-		return this.quantity;
-	}
-	public int getTotal()
-	{
-		return this.price * this.quantity;
-	}
-	void printTitle()
-	{
-		System.out.println("행선지\t단가\t수량\t금액\t차량번호");
-	}
-	void printData()
-	{
-		System.out.println(this.time+"\t"+this.price+"\t"+this.quantity+"\t"+this.number);
-	}
-	void printTicket()
-	{
-		System.out.println("예매하신 KTX의 출발 시각은"+this.time+""+"이며, 가격은"+this.price+"입니다.");
-	}
 }
 
 class Seoul extends Train
