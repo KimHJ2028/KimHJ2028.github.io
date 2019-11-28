@@ -1,4 +1,11 @@
-public static void main(String []args)
+package io.github.kimhj2028;
+
+import java.util.Scanner;
+import java.util.*;
+
+public class final1
+{
+	public static void main(String []args)
 	{
 		System.out.println("20151629-"+"김희재-"+ "기말 과제");
 		System.out.println("");
@@ -7,7 +14,7 @@ public static void main(String []args)
 		////////////////////////////////////////////////
 		// 각 Train들의 객체 생성 시작
 		// 열차 시간표를 출력하기 위한 시간표
-		Bus BusTimeTable = new Bus("",0,0,0);
+		Train TrainTimeTable = new Train("",0,0,0);
 		// 서울행 티켓 객체
 		Seoul stk1 = new Seoul("07:30",18100,1,1);
 		Seoul stk2 = new Seoul("97:30",18100,1,2);
@@ -47,7 +54,7 @@ public static void main(String []args)
 		if(select == 1)
 		{
 			System.out.println("서울역 행 KTX 시간표입니다.");
-			BusTimeTable.printTitle();
+			TrainTimeTable.printTitle();
 			stk1.printData();
 			stk2.printData();
 			stk3.printData();
@@ -92,7 +99,7 @@ public static void main(String []args)
 		else if(select == 2)
 		{
 			System.out.println("인천역 행 KTX 시간표입니다.");
-			BusTimeTable.printTitle();
+			TrainTimeTable.printTitle();
 			itk1.printData();
 			itk2.printData();
 			itk3.printData();
@@ -111,7 +118,7 @@ public static void main(String []args)
 			if(select2 == 2)
 			{
 				System.out.println("선택하신 차량 번호는 "+itk2.getNumber()+"호 차량입니다.");
-				itk2.printTicket();6
+				itk2.printTicket();
 			}
 			if(select2 == 3)
 			{
@@ -137,7 +144,7 @@ public static void main(String []args)
 		else if(select == 3)
 		{
 			System.out.println("대전역 행 KTX 시간표입니다.");
-			BusTimeTable.printTitle();
+			TrainTimeTable.printTitle();
 			dtk1.printData();
 			dtk2.printData();
 			dtk3.printData();
@@ -262,7 +269,7 @@ class Train extends final1
 	}
 	void printTicket()
 	{
-		System.out.println("예매하신 버스의 출발 시각은"+this.time+""+"이며, 가격은"+this.price+"입니다.");
+		System.out.println("예매하신 KTX의 출발 시각은"+this.time+""+"이며, 가격은"+this.price+"입니다.");
 	}
 }
 
@@ -302,23 +309,23 @@ class Daejeon extends Train
 	}
 }
 
-printTicket()
-{
-	System.out.println("┌────────────┐");
-	System.out.println("│출발시간 : "+this.time)	 │");
-	System.out.println("│
-	System.out.println("│목적지 : "
-	System.out.println("│
-	System.out.println("│
-	System.out.println("│
-	System.out.println("│
-	System.out.println("│
-	System.out.println("│
-	System.out.println("│
-	System.out.println("│
-	System.out.println("│
-	System.out.println("│
-	System.out.println("└───────────┘");
+//printTicket()
+//{
+	//System.out.println("┌────────────┐");
+//	System.out.println("│출발시간 : "+this.time)	 │");
+//	System.out.println("│
+//	System.out.println("│목적지 : "
+//	System.out.println("│
+//	System.out.println("│
+//	System.out.println("│
+//	System.out.println("│
+//	System.out.println("│
+//	System.out.println("│
+//	System.out.println("│
+//	System.out.println("│
+//	System.out.println("│
+//	System.out.println("│
+//	System.out.println("└───────────┘");
 
-	System.out.println("------------------------------");
-}
+//	System.out.println("------------------------------");
+//}
