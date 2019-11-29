@@ -4,9 +4,11 @@ import java.util.Scanner;
 import java.io.*;
 
 public class final1
-{
-	public static void main(String []args)
+{	
+	public static void main(String []args) throws FileNotFoundException
 	{
+		
+		
 		System.out.println("20151629-"+"김희재-"+ "기말 과제");
 		System.out.println("");
 		
@@ -18,27 +20,33 @@ public class final1
 		Train TrainTimeTable = new Train("",0,0,0);
 		Train Tr = new Train();
 		// 서울행 티켓 객체
-		Seoul stk1 = new Seoul("07:30",18100,1,1);
-		Seoul stk2 = new Seoul("97:30",18100,1,2);
-		Seoul stk3 = new Seoul("11:30",18100,1,3);
-		Seoul stk4 = new Seoul("13:30",18100,1,4);
-		Seoul stk5 = new Seoul("18:30",18100,1,5);
-		Seoul stk6 = new Seoul("21:30",20100,1,6);
+		Seoul stk1 = new Seoul("07:30",18100,0,1);
+		Seoul stk2 = new Seoul("97:30",18100,0,2);
+		Seoul stk3 = new Seoul("11:30",18100,0,3);
+		Seoul stk4 = new Seoul("13:30",18100,0,4);
+		Seoul stk5 = new Seoul("18:30",18100,0,5);
+		Seoul stk6 = new Seoul("21:30",20100,0,6);
 		// 인천행 티켓 객체
-		Incheon itk1 = new Incheon("08:00",15100,1,1);
-		Incheon itk2 = new Incheon("09:30",15100,1,2);
-		Incheon itk3 = new Incheon("11:00",15100,1,3);
-		Incheon itk4 = new Incheon("13:50",15100,1,4);
-		Incheon itk5 = new Incheon("17:00",15100,1,5);
-		Incheon itk6 = new Incheon("22:00",18100,1,6);
+		Incheon itk1 = new Incheon("08:00",15100,0,1);
+		Incheon itk2 = new Incheon("09:30",15100,0,2);
+		Incheon itk3 = new Incheon("11:00",15100,0,3);
+		Incheon itk4 = new Incheon("13:50",15100,0,4);
+		Incheon itk5 = new Incheon("17:00",15100,0,5);
+		Incheon itk6 = new Incheon("22:00",18100,0,6);
 		// 대전행 티켓 객체
-		Daejeon dtk1 = new Daejeon("06:00",12100,1,1);
-		Daejeon dtk2 = new Daejeon("07:30",12100,1,2);
-		Daejeon dtk3 = new Daejeon("11:00",12100,1,3);
-		Daejeon dtk4 = new Daejeon("14:20",12100,1,4);
-		Daejeon dtk5 = new Daejeon("18:10",12100,1,5);
-		Daejeon dtk6 = new Daejeon("23:40",15100,1,6);
+		Daejeon dtk1 = new Daejeon("06:00",12100,0,1);
+		Daejeon dtk2 = new Daejeon("07:30",12100,0,2);
+		Daejeon dtk3 = new Daejeon("11:00",12100,0,3);
+		Daejeon dtk4 = new Daejeon("14:20",12100,0,4);
+		Daejeon dtk5 = new Daejeon("18:10",12100,0,5);
+		Daejeon dtk6 = new Daejeon("23:40",15100,0,6);
 		////////////////////////////////////////////////
+		
+		// 티켓을 출력하는 csv파일 생성
+		PrintWriter pw = new PrintWriter(new File("C:\\Users\\404\\Desktop\\ticket.csv"));
+		StringBuilder sb = new StringBuilder();
+		
+		
 		// 시스템시작
 		System.out.println("부산역에 오신것을 환영합니다.");
 		// 행선지 선택 input
@@ -82,6 +90,19 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(stk1.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+stk1.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(stk1.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
+				
 			}
 			if(select2 == 2)
 			{
@@ -97,6 +118,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(stk2.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+stk2.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(stk2.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 			if(select2 == 3)
 			{
@@ -112,6 +145,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(stk3.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+stk3.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(stk3.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 			if(select2 == 4)
 			{
@@ -127,6 +172,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(stk4.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+stk4.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(stk4.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 			if(select2 == 5)
 			{
@@ -142,6 +199,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(stk5.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+stk5.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(stk5.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 			if(select2 == 6)
 			{
@@ -157,6 +226,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(stk6.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+stk6.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(stk6.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 		}
 		//////////////////////////////////서울행 종료
@@ -190,6 +271,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(itk1.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+itk1.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(itk1.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 			if(select2 == 2)
 			{
@@ -205,6 +298,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(itk2.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+itk2.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(itk2.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 			if(select2 == 3)
 			{
@@ -220,6 +325,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(itk3.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+itk3.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(itk3.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 			if(select2 == 4)
 			{
@@ -235,6 +352,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(itk4.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+itk4.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(itk4.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 			if(select2 == 5)
 			{
@@ -250,6 +379,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(itk5.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+itk5.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(itk5.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 			if(select2 == 6)
 			{
@@ -265,6 +406,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(itk6.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+itk6.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(itk6.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 		}
 		////////////////////////////////// 인천행 종료
@@ -300,6 +453,18 @@ public class final1
 				System.out.println(dtk6.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
 				
+				sb.append("선택하신 차량 번호는 "+dtk1.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(dtk1.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
+				
 			}
 			// 2호차 선택
 			if(select2 == 2)
@@ -316,6 +481,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(dtk6.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+dtk2.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(dtk2.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 			// 3호차 선택
 			if(select2 == 3)
@@ -332,6 +509,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(dtk3.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+dtk3.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(dtk3.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 			// 4호차 선택
 			if(select2 == 4)
@@ -348,6 +537,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(dtk4.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+dtk4.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(dtk4.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 			// 5호차 선택
 			if(select2 == 5)
@@ -364,6 +565,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(dtk5.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+dtk5.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(dtk5.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 			// 6호차 선택
 			if(select2 == 6)
@@ -379,6 +592,18 @@ public class final1
 				System.out.println("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
 				System.out.println(dtk6.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
 				System.out.println("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				
+				sb.append("선택하신 차량 번호는 "+dtk6.getNumber()+"호 차량입니다.");
+				sb.append('\n');
+				sb.append("구매하신 KTX의 총 좌석수는 "+total+"자리 이며, 총 가격은 "+tPrice+"입니다.");
+				sb.append('\n');
+				sb.append(dtk6.getTime()+"시 출발 예정이니, 늦지않게 탑승해 주시기 바랍니다.");
+				sb.append('\n');
+				sb.append("이상으로 KTX 예매를 종료합니다. 이용해 주셔서 감사합니다.");
+				sb.append('\n');
+				
+				pw.write(sb.toString());
+				pw.close();
 			}
 		}
 		////////////////////////////////// 대전행 종료
